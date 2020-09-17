@@ -16,9 +16,10 @@
                         <option value="lines">Čáry pod sebou</option>
                         <option value="ruler">Pravítko</option>
                         <option value="star">Hvězda</option>
-                        <option value="pascal">Pascalův trojúhelník</option>
+                        <option value="triangle">Sierpinského trojúhelník</option>
+                        <option value="chess">N královen</option>
                     </select>
-                    <label for="pixel-width">Rozlišení (px):</label>
+                    <label for="pixel-width">Rozlišení náhledu (px):</label>
                     <input id="pixel-width" asp-for="PixelWidth" type="number">
                     <div style="flex-grow: 1;"></div>
                     <button type="submit" value="Submit" asp-page-handler="Preview">
@@ -42,7 +43,10 @@
             <div class="result" style="backgroud-color: grey; flex-grow: 1;">
                 @{
                     if (Model.Image is null) {
-                        <text>Výstup neexistuje.</text>
+                        <text>Grafický výstup neexistuje.</text>
+                        if (!string.IsNullOrWhiteSpace(Model.GsOutput)) {
+                            <text> Asi došlo k chybě, podívejte se na konzolový výstup.</text>
+                        }
                     } else {
                         <img src="@Model.Image" style="width: 100%; border: 1px solid green" />
                     }
@@ -56,8 +60,12 @@
         </div>
 
         <div class=output>
-            Výstup:
-            <pre><code>@Model.GsOutput</code></pre>
+            @{ if (!string.IsNullOrWhiteSpace(Model.GsOutput)) {
+                <text>
+                Konzolový výstup:
+                <pre><code>@Model.GsOutput</code></pre>
+                </text>
+            } }
         </div>
     </form>
 
