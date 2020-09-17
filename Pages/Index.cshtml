@@ -1,0 +1,82 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+
+    <form method=POST>
+        <div style="display: flex; flex-direction: row; width: 100%">
+            <div style="display: flex; flex-direction: column">
+                <div style="display: flex; flex-direction: row">
+                    <select asp-for="Task">
+                        <option value="">Vyber si úložku</option>
+                        <option value="square">Čtverec</option>
+                        <option value="lines">Čáry pod sebou</option>
+                        <option value="ruler">Pravítko</option>
+                        <option value="star">Hvězda</option>
+                        <option value="pascal">Pascalův trojúhelník</option>
+                    </select>
+                    <label for="pixel-width">Rozlišení (px):</label>
+                    <input id="pixel-width" asp-for="PixelWidth" type="number">
+                    <div style="flex-grow: 1;"></div>
+                    <button type="submit" value="Submit" asp-page-handler="Preview">
+                        Náhled
+                    </button>
+                    <button type="submit" value="Submit" onclick="return confirm('Opravdu to chceš poslat na tiskárnu?')" asp-page-handler="Print">
+                        Poslat na tiskárnu
+                    </button>
+                </div>
+                <textarea asp-for="Script"
+                    id="input-text"
+                    style="
+                    font-family: 'Fira Code', 'Consolas', 'Lucida Console', Monaco, monospace;
+                    width: 66vw;
+                    height: 80vh;
+                    flex-shrink: 0;
+                    "></textarea>
+
+            </div>
+
+            <div class="result" style="backgroud-color: grey; flex-grow: 1;">
+                @{
+                    if (Model.Image is null) {
+                        <text>Výstup neexistuje.</text>
+                    } else {
+                        <img src="@Model.Image" style="width: 100%; border: 1px solid green" />
+                    }
+                }
+            </div>
+
+        </div>
+
+        <div class="settings">
+
+        </div>
+
+        <div class=output>
+            Výstup:
+            <pre><code>@Model.GsOutput</code></pre>
+        </div>
+    </form>
+
+    <script>
+        window.onunload = (event) => {
+            const code = document.getElementById("input-text").value
+            localStorage.setItem("code", code)
+        };
+
+        document.getElementById("input-text").value =
+            localStorage.getItem("code") ||
+            "/cm {72 mul 2.54 div} def\n" +
+            "newpath 5 cm 5 cm moveto 15 cm 25 cm lineto stroke\n" +
+            "newpath 5 cm 25 cm moveto 15 cm 5 cm lineto stroke\n";
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const resultbox = document.querySelector(".result").clientWidth
+            document.getElementById("pixel-width").value = window.devicePixelRatio * resultbox
+        }, false);
+
+    </script>
+</div>
