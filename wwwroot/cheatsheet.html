@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<!--
+==============================================================================
+           "GitHub HTML5 Pandoc Template" v2.2 — by Tristano Ajmone
+==============================================================================
+Copyright © Tristano Ajmone, 2017-2020, MIT License (MIT). Project's home:
+
+- https://github.com/tajmone/pandoc-goodies
+
+The CSS in this template reuses source code taken from the following projects:
+
+- GitHub Markdown CSS: Copyright © Sindre Sorhus, MIT License (MIT):
+  https://github.com/sindresorhus/github-markdown-css
+
+- Primer CSS: Copyright © 2016-2017 GitHub Inc., MIT License (MIT):
+  http://primercss.io/
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The MIT License
+
+Copyright (c) Tristano Ajmone, 2017-2020 (github.com/tajmone/pandoc-goodies)
+Copyright (c) Sindre Sorhus <sindresorhus@gmail.com> (sindresorhus.com)
+Copyright (c) 2017 GitHub Inc.
+
+"GitHub Pandoc HTML5 Template" is Copyright (c) Tristano Ajmone, 2017-2020,
+released under the MIT License (MIT); it contains readaptations of substantial
+portions of the following third party softwares:
+
+(1) "GitHub Markdown CSS", Copyright (c) Sindre Sorhus, MIT License (MIT).
+(2) "Primer CSS", Copyright (c) 2016 GitHub Inc., MIT License (MIT).
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+==============================================================================-->
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>cheatsheet</title>
+  <style type="text/css">
+@charset "UTF-8";.markdown-body{-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;color:#24292e;font-family:-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";font-size:16px;line-height:1.5;word-wrap:break-word;box-sizing:border-box;min-width:200px;max-width:980px;margin:0 auto;padding:45px}.markdown-body a{color:#0366d6;background-color:transparent;text-decoration:none;-webkit-text-decoration-skip:objects}.markdown-body a:active,.markdown-body a:hover{outline-width:0}.markdown-body a:hover{text-decoration:underline}.markdown-body a:not([href]){color:inherit;text-decoration:none}.markdown-body strong{font-weight:600}.markdown-body h1,.markdown-body h2,.markdown-body h3,.markdown-body h4,.markdown-body h5,.markdown-body h6{margin-top:24px;margin-bottom:16px;font-weight:600;line-height:1.25}.markdown-body h1{font-size:2em;margin:.67em 0;padding-bottom:.3em;border-bottom:1px solid #eaecef}.markdown-body h2{padding-bottom:.3em;font-size:1.5em;border-bottom:1px solid #eaecef}.markdown-body h3{font-size:1.25em}.markdown-body h4{font-size:1em}.markdown-body h5{font-size:.875em}.markdown-body h6{font-size:.85em;color:#6a737d}.markdown-body img{border-style:none}.markdown-body svg:not(:root){overflow:hidden}.markdown-body hr{box-sizing:content-box;height:.25em;margin:24px 0;padding:0;overflow:hidden;background-color:#e1e4e8;border:0}.markdown-body hr::before{display:table;content:""}.markdown-body hr::after{display:table;clear:both;content:""}.markdown-body input{margin:0;overflow:visible;font:inherit;font-family:inherit;font-size:inherit;line-height:inherit}.markdown-body [type=checkbox]{box-sizing:border-box;padding:0}.markdown-body *{box-sizing:border-box}.markdown-body blockquote{margin:0}.markdown-body ol,.markdown-body ul{padding-left:2em}.markdown-body ol ol,.markdown-body ul ol{list-style-type:lower-roman}.markdown-body ol ol,.markdown-body ol ul,.markdown-body ul ol,.markdown-body ul ul{margin-top:0;margin-bottom:0}.markdown-body ol ol ol,.markdown-body ol ul ol,.markdown-body ul ol ol,.markdown-body ul ul ol{list-style-type:lower-alpha}.markdown-body li>p{margin-top:16px}.markdown-body li+li{margin-top:.25em}.markdown-body dd{margin-left:0}.markdown-body dl{padding:0}.markdown-body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:600}.markdown-body dl dd{padding:0 16px;margin-bottom:16px}.markdown-body code{font-family:SFMono-Regular,Consolas,"Liberation Mono",Menlo,Courier,monospace}.markdown-body pre{font:12px SFMono-Regular,Consolas,"Liberation Mono",Menlo,Courier,monospace;word-wrap:normal}.markdown-body blockquote,.markdown-body dl,.markdown-body ol,.markdown-body p,.markdown-body pre,.markdown-body table,.markdown-body ul{margin-top:0;margin-bottom:16px}.markdown-body blockquote{padding:0 1em;color:#6a737d;border-left:.25em solid #dfe2e5}.markdown-body blockquote>:first-child{margin-top:0}.markdown-body blockquote>:last-child{margin-bottom:0}.markdown-body table{display:block;width:100%;overflow:auto;border-spacing:0;border-collapse:collapse}.markdown-body table th{font-weight:600}.markdown-body table td,.markdown-body table th{padding:6px 13px;border:1px solid #dfe2e5}.markdown-body table tr{background-color:#fff;border-top:1px solid #c6cbd1}.markdown-body table tr:nth-child(2n){background-color:#f6f8fa}.markdown-body img{max-width:100%;box-sizing:content-box;background-color:#fff}.markdown-body code{padding:.2em 0;margin:0;font-size:85%;background-color:rgba(27,31,35,.05);border-radius:3px}.markdown-body code::after,.markdown-body code::before{letter-spacing:-.2em;content:" "}.markdown-body pre>code{padding:0;margin:0;font-size:100%;word-break:normal;white-space:pre;background:0 0;border:0}.markdown-body .highlight{margin-bottom:16px}.markdown-body .highlight pre{margin-bottom:0;word-break:normal}.markdown-body .highlight pre,.markdown-body pre{padding:16px;overflow:auto;font-size:85%;line-height:1.45;background-color:#f6f8fa;border-radius:3px}.markdown-body pre code{display:inline;max-width:auto;padding:0;margin:0;overflow:visible;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}.markdown-body pre code::after,.markdown-body pre code::before{content:normal}.markdown-body .full-commit .btn-outline:not(:disabled):hover{color:#005cc5;border-color:#005cc5}.markdown-body kbd{box-shadow:inset 0 -1px 0 #959da5;display:inline-block;padding:3px 5px;font:11px/10px SFMono-Regular,Consolas,"Liberation Mono",Menlo,Courier,monospace;color:#444d56;vertical-align:middle;background-color:#fcfcfc;border:1px solid #c6cbd1;border-bottom-color:#959da5;border-radius:3px;box-shadow:inset 0 -1px 0 #959da5}.markdown-body :checked+.radio-label{position:relative;z-index:1;border-color:#0366d6}.markdown-body .task-list-item{list-style-type:none}.markdown-body .task-list-item+.task-list-item{margin-top:3px}.markdown-body .task-list-item input{margin:0 .2em .25em -1.6em;vertical-align:middle}.markdown-body::before{display:table;content:""}.markdown-body::after{display:table;clear:both;content:""}.markdown-body>:first-child{margin-top:0!important}.markdown-body>:last-child{margin-bottom:0!important}.Alert,.Error,.Note,.Success,.Warning{padding:11px;margin-bottom:24px;border-style:solid;border-width:1px;border-radius:4px}.Alert p,.Error p,.Note p,.Success p,.Warning p{margin-top:0}.Alert p:last-child,.Error p:last-child,.Note p:last-child,.Success p:last-child,.Warning p:last-child{margin-bottom:0}.Alert{color:#246;background-color:#e2eef9;border-color:#bac6d3}.Warning{color:#4c4a42;background-color:#fff9ea;border-color:#dfd8c2}.Error{color:#911;background-color:#fcdede;border-color:#d2b2b2}.Success{color:#22662c;background-color:#e2f9e5;border-color:#bad3be}.Note{color:#2f363d;background-color:#f6f8fa;border-color:#d5d8da}.Alert h1,.Alert h2,.Alert h3,.Alert h4,.Alert h5,.Alert h6{color:#246;margin-bottom:0}.Warning h1,.Warning h2,.Warning h3,.Warning h4,.Warning h5,.Warning h6{color:#4c4a42;margin-bottom:0}.Error h1,.Error h2,.Error h3,.Error h4,.Error h5,.Error h6{color:#911;margin-bottom:0}.Success h1,.Success h2,.Success h3,.Success h4,.Success h5,.Success h6{color:#22662c;margin-bottom:0}.Note h1,.Note h2,.Note h3,.Note h4,.Note h5,.Note h6{color:#2f363d;margin-bottom:0}.Alert h1:first-child,.Alert h2:first-child,.Alert h3:first-child,.Alert h4:first-child,.Alert h5:first-child,.Alert h6:first-child,.Error h1:first-child,.Error h2:first-child,.Error h3:first-child,.Error h4:first-child,.Error h5:first-child,.Error h6:first-child,.Note h1:first-child,.Note h2:first-child,.Note h3:first-child,.Note h4:first-child,.Note h5:first-child,.Note h6:first-child,.Success h1:first-child,.Success h2:first-child,.Success h3:first-child,.Success h4:first-child,.Success h5:first-child,.Success h6:first-child,.Warning h1:first-child,.Warning h2:first-child,.Warning h3:first-child,.Warning h4:first-child,.Warning h5:first-child,.Warning h6:first-child{margin-top:0}h1.title,p.subtitle{text-align:center}h1.title.followed-by-subtitle{margin-bottom:0}p.subtitle{font-size:1.5em;font-weight:600;line-height:1.25;margin-top:0;margin-bottom:16px;padding-bottom:.3em}div.line-block{white-space:pre-line}
+  </style>
+  <style type="text/css">code{white-space: pre;}</style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<article class="markdown-body">
+<h2 id="tahák-na-postscript">Tahák na Postscript</h2>
+<p>PostScript je zásobníkový jazyk – program má implicitní zásobník přes který se předávají hodnoty. Příkaz typicky odebere ze zásobníku svůj vstup může tam zapsat nějaký výstup. Když napíšeme konstantu (například číslo <code>12</code>, tak se přidá na zásobník). Příkazy a konstanty od sebe oddělujeme mezerami nebo novým řádkem, takže například <code>1 2 add</code> přidá jedničku, dvojku a pak je sečte; na zásobníku tak zůstane trojka.</p>
+<p>Proměnné a vlastní příkazy se definují příkazem <code>def</code>, který na vstupu očekává jméno a hodnotu. Například <code>/pocet 5 def</code> vyrobí proměnnou <code>pocet</code>. Prosté napsání <code>pocet</code> její hodnotu načte na zásobník, takže třeba <code>pocet 1 add</code> nechá na zásobníku <code>pocet + 1</code>. Když dáme část programu do složených závorek, vyrobíme tím spustitelný blok a když jej předáme příkazu <code>def</code> tak nám nadefinuje novou funkci. Například <code>/plus1 { 1 add } def</code> nám připraví příkaz na přičítání jedničky k hodnotě na vrcholu zásobníku.</p>
+<p>Výstupem skriptu je vytištěný papír, v našem případě velikosti A4. Máme k dispozici celou řadu příkazů na kreslení, nejdůležitější pro nás bude kreslení čar. Lomená čára se začne pomocí příkazu <code>newpath</code>, pak můžeme volat <code>X Y moveto</code> pro přesunutí na souřadnice a <code>X Y lineto</code> na vykreslení čáry na souřadnice X Y. Příkaz <code>stroke</code> čáru vykreslí na stránku. Před jeho zavoláním si ještě můžeme vybrat barvu (<code>r g b setrgbcolor</code>) a tloušťku (<code>t setlinewidth</code>).</p>
+<p>Může se hodit také zobrazovat text (například pro debugování). To dělá příkaz <code>(Hello world!) show</code>, font a velikost lze zvolit například takto <code>/Courier 12 selectfont</code>.</p>
+<p>Obdobně bloky kódu použijeme pro podmínky a cykly - <code>if</code>, <code>ifelse</code>, <code>repeat</code> a <code>for</code> jsou jenom příkazy které nějak spouští bloky na zásobníku. Například <code>1 a eq { (a se rovna jedna) show } if</code> vypíše daný text když <code>a = 1</code>. Obdobně funguje <code>1 a eq { (rovna se) show } { (nerovna se) show } ifelse</code>.</p>
+<p>Příkaz <code>10 { (X) show } repeat</code> prostě vypíše 10krát X. Příkaz for je trochu sofistikovanější cyklus – iteruje přes proměnnou a bere hned 4 parametry – spodní hranici, velikost kroku a horní hranici.</p>
+<p>Následující příklad vykreslí 11 rovnoběžných čar.</p>
+<pre><code>% iterujeme od 100 do 200 po deseti
+100 10 200 {
+    % tady máme na zásobníku iterační proměnnou
+    newpath
+    dup 100 moveto
+        200 lineto
+    stroke
+} for</code></pre>
+<p>Občas se může hodit uložit hodnotu z vrchu zásobníku do proměnné. To můžeme udělat trikem využívajícím příkaz <code>exch</code>, který prohodí první dvě hodnoty na zásobníku. Můžeme pak psát například <code>/promenna exch def</code>. Trik je v tom, že zásobník bude postupně vypadat <code>… X</code>, <code>… X /promenna</code> a <code>… /promenna X</code>, a v posledním případě už můžeme zavolat <code>def</code>.</p>
+<h3 id="praktický-příklad">Praktický příklad</h3>
+<p>Níže následuje jednoduchý program kreslící domeček. Pozor, každý program v Postscriptu by měl začínat jednořádkovou hlavičkou <code>%!PS</code>, jinak ho tiskárna nemusí detekovat jako Postscriptový program. Na konci programu musí být příkaz <code>showpage</code>, který zobrazí vykreslenou stránku.</p>
+<pre><code>%!PS
+
+/velikost 200 def % Velikost hrany
+/pagewidth  currentpagedevice /PageSize get 0 get def % magic příkazy na zjištění rozměrů stránky
+/pageheight currentpagedevice /PageSize get 1 get def
+
+/rohx pagewidth velikost sub 2 div def % Spočítání levého rohu tak, aby byl domeček ve středu
+/rohy pageheight velikost sub 2 div def
+
+newpath
+rohx rohy moveto
+velikost 0 rlineto
+0 velikost rlineto
+velikost neg 0 rlineto
+0 velikost neg rlineto
+velikost velikost rlineto
+rohx velikost add rohy moveto
+velikost neg velikost rlineto
+velikost 2 div dup rlineto
+velikost 2 div dup neg rlineto
+stroke
+showpage</code></pre>
+<h2 id="užitečné-příkazy">Užitečné příkazy</h2>
+<h3 id="práce-se-zásobníkem">Práce se zásobníkem</h3>
+<table>
+<thead>
+<tr class="header">
+<th>Příkaz</th>
+<th>Vstup</th>
+<th>Výstup</th>
+<th>Popis</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>pop</code></td>
+<td><code>X</code></td>
+<td></td>
+<td>Zahodí hodnotu</td>
+</tr>
+<tr class="even">
+<td><code>exch</code></td>
+<td><code>X Y</code></td>
+<td><code>Y X</code></td>
+<td>Vymění dvě hodnota</td>
+</tr>
+<tr class="odd">
+<td><code>dup</code></td>
+<td><code>X</code></td>
+<td><code>X</code> <code>X</code></td>
+<td>Zduplikuje hodnotu</td>
+</tr>
+<tr class="even">
+<td><code>copy</code></td>
+<td><code>X1..Xn n</code></td>
+<td><code>X1..Xn X1..Xn</code></td>
+<td>Zduplikuje vrchních <code>n</code> hodnot</td>
+</tr>
+<tr class="odd">
+<td><code>index</code></td>
+<td><code>Xn..X0 n</code></td>
+<td><code>Xn..X0 Xn</code></td>
+<td>Zkopíruje n-tý prvek navrch zásobníku</td>
+</tr>
+<tr class="even">
+<td><code>clear</code></td>
+<td><code>: X...</code></td>
+<td><code>:</code></td>
+<td>Smaže celý zásobník</td>
+</tr>
+<tr class="odd">
+<td><code>count</code></td>
+<td><code>: X...</code></td>
+<td><code>: X... n</code></td>
+<td>Spočítá počet prvků na zásobníku</td>
+</tr>
+</tbody>
+</table>
+<h3 id="aritmetika">Aritmetika</h3>
+<table>
+<thead>
+<tr class="header">
+<th>Příkaz</th>
+<th>Vstup</th>
+<th>Výstup</th>
+<th>Popis</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>add</code></td>
+<td><code>x y</code></td>
+<td><code>x+y</code></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>div</code></td>
+<td><code>x y</code></td>
+<td><code>x/y</code></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><code>idiv</code></td>
+<td><code>x y</code></td>
+<td><code>x/y</code></td>
+<td>celočíselné dělení</td>
+</tr>
+<tr class="even">
+<td><code>mod</code></td>
+<td><code>x y</code></td>
+<td><code>x%y</code></td>
+<td>modulo</td>
+</tr>
+<tr class="odd">
+<td><code>mul</code></td>
+<td><code>x y</code></td>
+<td><code>x*y</code></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>sub</code></td>
+<td><code>x y</code></td>
+<td><code>x-y</code></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><code>bitshift</code></td>
+<td><code>n i</code></td>
+<td><code>n'</code></td>
+<td>posune n o i bitů</td>
+</tr>
+<tr class="even">
+<td><code>abs</code></td>
+<td><code>x</code></td>
+<td></td>
+<td>x</td>
+</tr>
+<tr class="odd">
+<td><code>neg</code></td>
+<td><code>x</code></td>
+<td><code>-x</code></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>ceiling</code></td>
+<td><code>x</code></td>
+<td><code>ceil(x)</code></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><code>floor</code></td>
+<td><code>x</code></td>
+<td><code>floor(x)</code></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>round</code></td>
+<td><code>x</code></td>
+<td><code>round(x)</code></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><code>truncate</code></td>
+<td><code>x</code></td>
+<td><code>trunc(x)</code></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>sqrt</code></td>
+<td><code>x</code></td>
+<td><code>r</code></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><code>atan</code></td>
+<td><code>num den</code></td>
+<td><code>angle</code></td>
+<td>tan<sup>-1</sup>(num/den)</td>
+</tr>
+<tr class="even">
+<td><code>cos</code></td>
+<td><code>angle</code></td>
+<td><code>r</code></td>
+<td>všechny úhly jsou ve stupních</td>
+</tr>
+<tr class="odd">
+<td><code>sin</code></td>
+<td><code>angle</code></td>
+<td><code>r</code></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>exp</code></td>
+<td><code>base exponent</code></td>
+<td><code>r</code></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><code>ln</code></td>
+<td><code>x</code></td>
+<td><code>r</code></td>
+<td>přirozený log</td>
+</tr>
+<tr class="even">
+<td><code>log</code></td>
+<td><code>x</code></td>
+<td><code>r</code></td>
+<td>desítkový log</td>
+</tr>
+<tr class="odd">
+<td><code>rand</code></td>
+<td>-</td>
+<td><code>i</code></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>srand</code></td>
+<td><code>i</code></td>
+<td>-</td>
+<td>nastaví seed náhodného generátoru</td>
+</tr>
+<tr class="odd">
+<td><code>rrand</code></td>
+<td>-</td>
+<td><code>i</code></td>
+<td>vrátí seed</td>
+</tr>
+<tr class="even">
+<td><code>ne</code>, <code>ge</code>, <code>gt</code>, <code>le</code>, <code>lt</code></td>
+<td><code>X Y</code></td>
+<td><code>b</code></td>
+<td>porovnávací operátory</td>
+</tr>
+<tr class="odd">
+<td><code>and</code>, <code>not</code>, <code>or</code>, <code>xor</code></td>
+<td><code>b1 b2</code></td>
+<td><code>b</code></td>
+<td>logické operátory</td>
+</tr>
+<tr class="even">
+<td><code>true</code></td>
+<td>-</td>
+<td><code>true</code></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><code>false</code></td>
+<td>-</td>
+<td><code>false</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="cykly-a-podmínky">Cykly a podmínky</h3>
+<table>
+<thead>
+<tr class="header">
+<th>Příkaz</th>
+<th>Vstup</th>
+<th>Výstup</th>
+<th>Popis</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>exec</code></td>
+<td><code>X</code></td>
+<td>-</td>
+<td>spustí objekt na zásobníku</td>
+</tr>
+<tr class="even">
+<td><code>if</code></td>
+<td><code>f p</code></td>
+<td>-</td>
+<td>spustí <code>p</code> když <code>f</code> je true</td>
+</tr>
+<tr class="odd">
+<td><code>ifelse</code></td>
+<td><code>f p1 p2</code></td>
+<td>-</td>
+<td>spustí <code>p1</code> když <code>f</code> je true nebo <code>p2</code> když <code>f</code> je false</td>
+</tr>
+<tr class="even">
+<td><code>for</code></td>
+<td><code>x0 x++ x&lt;= p</code></td>
+<td>-</td>
+<td>spustí <code>p</code> s hodnotami od <code>x0</code> do <code>x&lt;=</code> s kroky velikosti <code>x++</code></td>
+</tr>
+<tr class="odd">
+<td><code>repeat</code></td>
+<td><code>n p</code></td>
+<td>-</td>
+<td>spustí <code>p</code> n-krát</td>
+</tr>
+<tr class="even">
+<td><code>loop</code></td>
+<td><code>p</code></td>
+<td>-</td>
+<td>cyklí donekonečna</td>
+</tr>
+<tr class="odd">
+<td><code>exit</code></td>
+<td>-</td>
+<td>-</td>
+<td>vyskočí z nejbližší smyčky</td>
+</tr>
+</tbody>
+</table>
+<h3 id="konverze">Konverze</h3>
+<table>
+<thead>
+<tr class="header">
+<th>Příkaz</th>
+<th>Vstup</th>
+<th>Výstup</th>
+<th>Popis</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>cvi</code></td>
+<td><code>n/s</code></td>
+<td><code>i</code></td>
+<td>konvertuje na int</td>
+</tr>
+<tr class="even">
+<td><code>cvn</code></td>
+<td><code>s</code></td>
+<td><code>name</code></td>
+<td>konvertuje na jméno</td>
+</tr>
+<tr class="odd">
+<td><code>cvr</code></td>
+<td><code>n/s</code></td>
+<td><code>r</code></td>
+<td>konvertuje na reálné číslo</td>
+</tr>
+<tr class="even">
+<td><code>cvs</code></td>
+<td><code>X s</code></td>
+<td><code>s'</code></td>
+<td>konvertuje na string</td>
+</tr>
+<tr class="odd">
+<td><code>cvrs</code></td>
+<td><code>n radix s</code></td>
+<td><code>s'</code></td>
+<td>konvertuje na string v dané soustavě</td>
+</tr>
+</tbody>
+</table>
+<p>Před konverzí na string je potřeba předvyrobit string potřebné velikosti. Pokud máme (maximálně) tříciferné číslo, můžeme ho vypsat takto: <code>mojeCislo 3 string cvs show</code>. Když velikost čísla neznáme, můžeme prostě zvolit dostatečně vysokou konstantu a nebo si délku spočítat logartimem ;)</p>
+<h3 id="pole">Pole</h3>
+<table>
+<thead>
+<tr class="header">
+<th>Příkaz</th>
+<th>Vstup</th>
+<th>Výstup</th>
+<th>Popis</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>array</code></td>
+<td><code>n</code></td>
+<td><code>a</code></td>
+<td>vyrobí pole délky <code>n</code> obsahující <code>null</code>y</td>
+</tr>
+<tr class="even">
+<td><code>[</code></td>
+<td>-</td>
+<td><code>M</code></td>
+<td>začne konstruovat pole</td>
+</tr>
+<tr class="odd">
+<td><code>]</code></td>
+<td><code>M X1..n</code></td>
+<td><code>a</code></td>
+<td>ukončí konstrukci pole - převede hodnoty na zásobníku na pole</td>
+</tr>
+<tr class="even">
+<td><code>length</code></td>
+<td><code>a</code></td>
+<td><code>n</code></td>
+<td>délka</td>
+</tr>
+<tr class="odd">
+<td><code>get</code></td>
+<td><code>a i</code></td>
+<td><code>a[i]</code></td>
+<td>vrátí prvek <code>i</code></td>
+</tr>
+<tr class="even">
+<td><code>put</code></td>
+<td><code>a i X</code></td>
+<td>-</td>
+<td><code>a[i]=X</code></td>
+</tr>
+<tr class="odd">
+<td><code>getinterval</code></td>
+<td><code>a i n</code></td>
+<td><code>a[i..+n]</code></td>
+<td>vyřízne část pole jako nové pole</td>
+</tr>
+<tr class="even">
+<td><code>putinterval</code></td>
+<td><code>a i b</code></td>
+<td>-</td>
+<td>zapíše do pole jiné pole</td>
+</tr>
+<tr class="odd">
+<td><code>aload</code></td>
+<td><code>a</code></td>
+<td><code>a[0]..a[n-1] a</code></td>
+<td>dá na zásobník všechny prvky pole</td>
+</tr>
+<tr class="even">
+<td><code>astore</code></td>
+<td><code>a[0]..a[n-1] a</code></td>
+<td><code>a</code></td>
+<td>zapíše do pole všechny prvky ze zásobníku najednou</td>
+</tr>
+<tr class="odd">
+<td><code>copy</code></td>
+<td><code>a b</code></td>
+<td><code>b'</code></td>
+<td>zkopíruje pole <code>a</code> do pole <code>b</code></td>
+</tr>
+<tr class="even">
+<td><code>forall</code></td>
+<td><code>a p</code></td>
+<td>-</td>
+<td>spustí <code>p</code> pro každý prvek pole</td>
+</tr>
+</tbody>
+</table>
+<h3 id="strings">Strings</h3>
+<table>
+<thead>
+<tr class="header">
+<th>Příkaz</th>
+<th>Vstup</th>
+<th>Výstup</th>
+<th>Popis</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>string</code></td>
+<td><code>n</code></td>
+<td><code>s</code></td>
+<td>Vyrobí string délky <code>n</code></td>
+</tr>
+<tr class="even">
+<td><code>anchorsearch</code></td>
+<td><code>s t</code></td>
+<td><code>post match true</code> nebo <code>s false</code></td>
+<td>Ověří, že <code>t</code> je začátkem <code>s</code></td>
+</tr>
+<tr class="odd">
+<td><code>search</code></td>
+<td><code>s t</code></td>
+<td><code>post match pre true</code> nebo <code>string false</code></td>
+<td>Hledá <code>t</code> v <code>s</code></td>
+</tr>
+<tr class="even">
+<td><code>token</code></td>
+<td><code>s</code></td>
+<td><code>post token true</code> nebo <code>false</code></td>
+<td>Načte ze začátku s jeden token</td>
+</tr>
+</tbody>
+</table>
+<p><code>length</code>, <code>get</code>, <code>put</code>, <code>getinterval</code>, <code>putinterval</code>, <code>copy</code>, <code>forall</code> fungují stejně jako u polí</p>
+<h3 id="kreslení">Kreslení</h3>
+<table>
+<thead>
+<tr class="header">
+<th>Příkaz</th>
+<th>Vstup</th>
+<th>Výstup</th>
+<th>Popis</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>newpath</code></td>
+<td>-</td>
+<td>-</td>
+<td>Vyrobí prázdnou cestu</td>
+</tr>
+<tr class="even">
+<td><code>currentpoint</code></td>
+<td>-</td>
+<td><code>x y</code></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><code>moveto</code></td>
+<td><code>x y</code></td>
+<td>-</td>
+<td>Posune se na x, y</td>
+</tr>
+<tr class="even">
+<td><code>rmoveto</code></td>
+<td><code>dx dy</code></td>
+<td>-</td>
+<td>Relativní posun - posune se o dx, dy</td>
+</tr>
+<tr class="odd">
+<td><code>lineto</code></td>
+<td><code>x y</code></td>
+<td>-</td>
+<td>Udělá čáru na x, y</td>
+</tr>
+<tr class="even">
+<td><code>rlineto</code></td>
+<td><code>dx dy</code></td>
+<td>-</td>
+<td>Relativní čára - posune se o dx, dy a vyrobí tam čáru</td>
+</tr>
+<tr class="odd">
+<td><code>arc</code></td>
+<td><code>x y r ang1 ang2</code></td>
+<td>-</td>
+<td>Přidá kruhovou výseč (proti směru h. ručiček)</td>
+</tr>
+<tr class="even">
+<td><code>arcn</code></td>
+<td><code>x y r ang1 ang2</code></td>
+<td>-</td>
+<td>Přidá kruhovou výseč (po směru h. ručiček)</td>
+</tr>
+<tr class="odd">
+<td><code>curveto</code></td>
+<td><code>x1 y1 x2 y2 x3 y3</code></td>
+<td>-</td>
+<td>Přidá Beziérovu křivku</td>
+</tr>
+<tr class="even">
+<td><code>rcurveto</code></td>
+<td><code>x1 y1 x2 y2 x3 y3</code></td>
+<td>-</td>
+<td>Přidá Beziérovu křivku (relativní souřadnice)</td>
+</tr>
+<tr class="odd">
+<td><code>closepath</code></td>
+<td>-</td>
+<td>-</td>
+<td>Uzavře aktuální cestu (spojí koncový a počáteční bod)</td>
+</tr>
+<tr class="even">
+<td><code>stroke</code></td>
+<td>-</td>
+<td>-</td>
+<td>Nakreslí aktuální čáru</td>
+</tr>
+<tr class="odd">
+<td><code>fill</code></td>
+<td>-</td>
+<td>-</td>
+<td>Vybarví aktuální čáru</td>
+</tr>
+<tr class="even">
+<td><code>setlinewidth</code></td>
+<td><code>x</code></td>
+<td>-</td>
+<td>Nastaví šířkku čáry</td>
+</tr>
+<tr class="odd">
+<td><code>currentlinewidth</code></td>
+<td>-</td>
+<td><code>x</code></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>setgray</code></td>
+<td><code>x</code></td>
+<td>-</td>
+<td>Nastaví barvu na šedou (0=černá … 1=bílá)</td>
+</tr>
+<tr class="odd">
+<td><code>currentgray</code></td>
+<td>-</td>
+<td><code>x</code></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>setrgbcolor</code></td>
+<td><code>r g b</code></td>
+<td>-</td>
+<td>Nastaví barvu na RGB (hodnoty 0 až 1)</td>
+</tr>
+<tr class="odd">
+<td><code>currentrgbcolor</code></td>
+<td>-</td>
+<td><code>r g b</code></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>gstate</code></td>
+<td>-</td>
+<td>-</td>
+<td>Uloží aktuální styl na zásobník stylů</td>
+</tr>
+<tr class="odd">
+<td><code>grestore</code></td>
+<td>-</td>
+<td>-</td>
+<td>Načte styl ze zásobníku</td>
+</tr>
+</tbody>
+</table>
+<!-- ### Text
+
+Příkaz | Vstup | Výstup | Popis
+-------|-------|--------|------
+`definefont` | `key font` | - | register font as a font dictionary
+`findfont` | `key` | `font` | return font dict identified by key
+`scalefont` | `font x` | `font'` | scale font by x to produce new font'
+`makefont` | `font m` | `font'` | transform font by matrix to produce new font'
+`setfont` | `font` | - | set font as current
+`currentfont` | - | `font` | vrátí aktuální font
+`show` | `s` | - | print characters of s on page
+`ashow` | `x y s` | - | add (x,y) to width of each char while showing s
+`widthshow` | `x y char s` | - | add (x,y) to width of 'c' while showing s
+`awidthshow` | `x1 y1 char x2 y2 s` | - | ashow combined with widthshow
+`kshow` | `p s` | - | execute p between characters shown from s
+`stringwidth` | `s` | `x y` | width of s in current font
+
+
+### Dictionaries
+
+Příkaz | Vstup | Výstup | Popis
+-------|-------|--------|------
+`dict` | `n` | `d` | create new dictionary capable of holding n elements
+`length` | `d` | `n` | number of pairs defined
+`maxlength` | `d` | `n` | maximum number of pairs available
+`begin` | `d` | - | push dict on dictionary stack
+`end` | - | - | pop from dict stack
+`def` | `key value` | - | associate key with value in current dict
+`load` | `key` | `value` | search dict stack for key and return associated value
+`store` | `key value` | - | replace topmost definiton of key
+`known` | `d key` | `f` | is key in dict?
+`where` | `key` | `d true` | find dictionary in which key is defined
+ | false
+`copy` | `d1 d2` | `d2` | copy contents of d1 to d2
+`forall` | `d p` | - | execute p for each element of d
+`errordict` | - | `d` | get error dictionary
+`systemdict` | - | `d`
+`userdict` | - | `d`
+`currentdict` | - | `d`
+`countdictstack` | - | `n` | get number of dicts on the dict stack
+`dictstack` | `a` | `a'` | copy dict stack to array
+
+-->
+<h3 id="použitá-notace">Použitá notace</h3>
+<table>
+<thead>
+<tr class="header">
+<th>Zkratka</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>M</code></td>
+<td>značka</td>
+</tr>
+<tr class="even">
+<td>X, Y</td>
+<td>cokoliv</td>
+</tr>
+<tr class="odd">
+<td>a, b</td>
+<td>pole</td>
+</tr>
+<tr class="even">
+<td><code>f</code></td>
+<td>boolean</td>
+</tr>
+<tr class="odd">
+<td>i, n</td>
+<td>celé číslo</td>
+</tr>
+<tr class="even">
+<td><code>p</code></td>
+<td>procedura</td>
+</tr>
+<tr class="odd">
+<td><code>r</code></td>
+<td>reálné číslo</td>
+</tr>
+<tr class="even">
+<td>s, t</td>
+<td>string</td>
+</tr>
+<tr class="odd">
+<td>x, y</td>
+<td>čísla</td>
+</tr>
+<tr class="even">
+<td>:</td>
+<td>spodek zásobníku</td>
+</tr>
+</tbody>
+</table>
+</article>
+</body>
+</html>

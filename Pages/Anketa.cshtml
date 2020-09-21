@@ -1,0 +1,38 @@
+﻿@page
+@model AnketaModel
+@{
+    ViewData["Title"] = "Anketa";
+}
+
+<div class="text-center anketa" style="max-width: 1000px;">
+
+    <form method=POST>
+        <img src="./Jordan.jpg" style="float: right" class="jordan-img" />
+
+        <p>
+            Starosta Jordan by se Vás rád zeptal, co si myslíte o prohibici Kofoly.
+            Je jasné, že prohibice má mnoho pozitivních efektů.
+            Nikdo nepopírá, že opravdu pomáhá chránit před nespavostí, rozpadání rodin. Předávkování Kofeinem i cukrem je velmi nebezpečné a rozhodně nechceme aby se toto stávalo naším dětem.
+            Ze zahraničí víme jaké devastující účinky může neomezená konzumace Kofoly mít.
+        </p>
+        <p>
+            Nicméně, politika je hodně o kompromisech a všechno dobré má i něco špatného.
+            Prohibice tlačí trh s kofeinovými nápoji na černý trh a vede tak ke zvýšené kriminalitě.
+            Kdybychom Kofolu legalizovali, mohli bychom také vybrat více peněz na tzv. cukrových daních (sugar tax, jako mají v zahraničí).
+            Místo podpory kriminality bychom tak podpořili třeba dopravní infrastrukturu a školství.
+        </p>
+
+        <p>
+        Myslím si, že
+        <button type="submit" asp-page-handler="No">
+            prohibice je dobrá.
+        </button>
+        <button type="submit" onclick="return confirm('Opravdu byste chtěli zrušit prohibici?')" asp-page-handler="Yes">
+            prohibice není prospěšná.
+        </button>
+        </p>
+        <p>
+        <input type="text" placeholder="Chcete něco dodat?" asp-for="Msg" >
+        </p>
+    </form>
+</div>
