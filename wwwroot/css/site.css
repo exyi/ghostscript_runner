@@ -34,6 +34,18 @@ html {
     font-size: 16px;
   }
 }
+.anketa {
+  padding-top: 20px;
+}
+
+.jordan-img {
+  padding-left: 20px;
+}
+
+.text-center {
+  margin-left: auto;
+  margin-right: auto;
+}
 
 .border-top {
   border-top: 1px solid #e5e5e5;

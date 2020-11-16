@@ -17,11 +17,13 @@
                         <option value="ruler">Pravítko</option>
                         <option value="star">Hvězda</option>
                         <option value="triangle">Sierpinského trojúhelník</option>
-                        <option value="chess">N královen</option>
+                        <option value="chess1">Šachovnice</option>
+                        <option value="chess2">N královen</option>
                     </select>
                     <label for="pixel-width">Rozlišení náhledu (px):</label>
                     <input id="pixel-width" asp-for="PixelWidth" type="number">
                     <div style="flex-grow: 1;"></div>
+                    <button class="anketa-button"><a href="./Anketa">Anketa</a></button>
                     <button type="submit" value="Submit" asp-page-handler="Preview">
                         Náhled
                     </button>
@@ -42,7 +44,10 @@
 
             <div class="result" style="backgroud-color: grey; flex-grow: 1;">
                 @{
-                    if (Model.Image is null) {
+                    if (Model.Printed) {
+                        <text>Grafický výstup je na papíře (pokud nedošlo k chybě).</text>
+                    }
+                    else if (Model.Image is null) {
                         <text>Grafický výstup neexistuje.</text>
                         if (!string.IsNullOrWhiteSpace(Model.GsOutput)) {
                             <text> Asi došlo k chybě, podívejte se na konzolový výstup.</text>
@@ -83,8 +88,12 @@
 
         document.addEventListener('DOMContentLoaded', function() {
             const resultbox = document.querySelector(".result").clientWidth
-            document.getElementById("pixel-width").value = window.devicePixelRatio * resultbox
+            document.getElementById("pixel-width").value = 0 | (window.devicePixelRatio * resultbox)
         }, false);
 
     </script>
+
+    <p> <a href="./cheatsheet.html"> Tahák </a>
+    <p> <a href="https://mj.ucw.cz/papers/psref.txt"> Medvův detailnější tahák </a>
+    <p> <a href="./zadani.pdf"> Zadání </a>
 </div>

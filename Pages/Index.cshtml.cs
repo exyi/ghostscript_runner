@@ -11,16 +11,33 @@ using Microsoft.Extensions.Logging;
 
 namespace ghostscript_runner.Pages
 {
+    public class AnketaModel : PageModel
+    {
+        [BindProperty]
+        public string Msg { get; set; } = "";
+        public void OnPostYes()
+        {
+            var x = (Msg ?? "").Replace("\n", "");
+            System.IO.File.AppendAllText("anketa-yes.log", $"{DateTime.Now.ToString("o")} {HttpContext.Connection.RemoteIpAddress}: YES {x}\n");
+        }
+        public void OnPostNo()
+        {
+            var x = (Msg ?? "").Replace("\n", "");
+            System.IO.File.AppendAllText("anketa-no.log", $"{DateTime.Now.ToString("o")} {HttpContext.Connection.RemoteIpAddress}: NO {x}\n");
+        }
+    }
     public class IndexModel : PageModel
     {
         [BindProperty]
-        public string Script { get; set; } = "AHOJ";
+        public string Script { get; set; } = "";
 
         [BindProperty]
         public int PixelWidth { get; set; } = 640;
 
         [BindProperty]
         public string Task { get; set; } = "";
+
+        public bool Printed { get; set; } = false;
 
         public string GsOutput { get; set; } = "";
         public string Image { get; set; } = null;
@@ -50,7 +67,8 @@ namespace ghostscript_runner.Pages
                 "star" => rand.Next(6, 50) + "",
                 "ruler" => rand.NextDouble() * 2.5 + 0.5 + "",
                 "triangle" => rand.Next(4, 10) + "",
-                "chess" => rand.Next(5, 10) + "",
+                "chess1" => rand.Next(5, 10) + "",
+                "chess2" => rand.Next(5, 10) + "",
                 _ => throw new Exception("Neplatná úloha " + Task),
             };
 
@@ -113,12 +131,12 @@ namespace ghostscript_runner.Pages
             System.IO.File.WriteAllText(psFile, script2);
 
             System.IO.File.AppendAllLines("submit.log", new [] {
-                $"Submit from {Request.Host:20} task {Task:6} input {input} : {psFile}"
+                $"Submit from {HttpContext.Connection.RemoteIpAddress,20} task {Task,6} input {input} : {psFile}"
             });
 
             var outputLines = new List<string>();
 
-            var ncCmd = Command.Run("nc", new [] { "192.168.42.3", "9100" })
+            var ncCmd = Command.Run("nc", new [] { "192.168.2.101", "9100" })
                 .RedirectFrom(new StringReader(script2))
                 .RedirectTo(outputLines)
                 .RedirectStandardErrorTo(outputLines)
@@ -130,6 +148,8 @@ namespace ghostscript_runner.Pages
             ncCmd.Kill();
 
             this.GsOutput = string.Join("\n", outputLines);
+
+            Printed = true;
 
             if (string.IsNullOrWhiteSpace(GsOutput))
                 this.GsOutput = "Vstup odeslán, tiskárna neoznámila žádnou chybu";
